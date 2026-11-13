@@ -1,0 +1,145 @@
+
+/* Modal Overlay */
+.modalBackground {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  background: rgba(0, 0, 0, 0.85) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  z-index: 99999 !important;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Modal Container */
+.modalContainer {
+  position: relative;
+
+  width: 100% !important;
+  max-width: 420px !important;
+  min-height: 280px;
+
+  padding: 40px 30px !important;
+  box-sizing: border-box;
+
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0, 220, 90, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(145deg, #10291a, #050a07 75%) !important;
+
+  border: 1px solid rgba(74, 230, 115, 0.3) !important;
+  border-radius: 24px !important;
+
+  color: #f5f7f5 !important;
+
+  box-shadow:
+    0 0 35px rgba(0, 255, 100, 0.1),
+    0 25px 70px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+
+  animation: modalOpen 0.3s ease-out;
+}
+
+/* Close Button */
+.modalContainer .closeBtn {
+  position: absolute !important;
+  top: 16px !important;
+  right: 18px !important;
+
+  width: 35px !important;
+  height: 35px !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+
+  background: rgba(0, 0, 0, 0.35) !important;
+  color: #b9ff51 !important;
+
+  border: 1px solid rgba(100, 255, 130, 0.35) !important;
+  border-radius: 50% !important;
+
+  font-size: 16px !important;
+  font-weight: 600 !important;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.modalContainer .closeBtn:hover {
+  background: #b9ff51 !important;
+  color: #061009 !important;
+  box-shadow: 0 0 18px rgba(185, 255, 81, 0.4);
+  transform: rotate(90deg);
+}
+
+/* User Name */
+.modalContainer h1 {
+  color: #f5fff6 !important;
+  font-size: 28px !important;
+  font-weight: 600 !important;
+
+  margin: 25px 0 25px !important;
+  letter-spacing: -0.8px;
+  overflow-wrap: anywhere;
+}
+
+/* User Details */
+.modalContainer p {
+  color: #b8c7bb !important;
+
+  font-size: 15px !important;
+  font-weight: 400 !important;
+
+  background: rgba(255, 255, 255, 0.035) !important;
+
+  border: 1px solid rgba(100, 200, 120, 0.15) !important;
+  border-radius: 10px !important;
+
+  padding: 14px 16px !important;
+  margin: 12px 0 !important;
+
+  transition: all 0.2s ease;
+  overflow-wrap: anywhere;
+}
+
+.modalContainer p:hover {
+  border-color: rgba(185, 255, 81, 0.45) !important;
+  background: rgba(0, 255, 100, 0.06) !important;
+}
+
+/* Modal Animation */
+@keyframes modalOpen {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+  .modalContainer {
+    padding: 35px 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .modalContainer h1 {
+    font-size: 23px !important;
+  }
+}
